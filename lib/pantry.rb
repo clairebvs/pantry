@@ -17,6 +17,13 @@ class Pantry
   end
 
   def add_to_shopping_list(recipe)
+
+    array << recipe.ingredients
+    result = array.each_with_object(Hash.new(0)) do |hash, result|
+      hash.each { |key, value| result[key] += value}
+    end
+
+    @shopping_list = result
     @shopping_list = recipe.ingredients
   end
 
