@@ -3,7 +3,6 @@ require 'minitest/autorun'
 require 'minitest/pride'
 
 class PantryTest < Minitest::Test
-
   def test_it_exists
     pantry = Pantry.new
 
@@ -37,13 +36,4 @@ class PantryTest < Minitest::Test
 
     assert_equal 30, pantry.stock_check("Cheese")
   end
-
-
-#
-# pantry.restock("Cheese", 20)
-# pantry.stock_check("Cheese")
-# # => 30
-# ```
-
-
 end
