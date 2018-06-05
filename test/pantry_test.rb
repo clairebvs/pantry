@@ -22,12 +22,23 @@ class PantryTest < Minitest::Test
     assert_equal 0, pantry.stock_check("Cheese")
   end
 
+  def test_stock_is_filled_after_restock
+    pantry = Pantry.new
+
+    pantry.restock("Cheese", 10)
+    assert_equal 10, pantry.stock_check("Cheese")
+  end
+
+  def test_stock_can_be_filled_multiple_times
+    pantry = Pantry.new
+
+    pantry.restock("Cheese", 10)
+    pantry.restock("Cheese", 20)
+
+    assert_equal 30, pantry.stock_check("Cheese")
+  end
 
 
-#
-# pantry.restock("Cheese", 10)
-# pantry.stock_check("Cheese")
-# # => 10
 #
 # pantry.restock("Cheese", 20)
 # pantry.stock_check("Cheese")

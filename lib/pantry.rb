@@ -10,4 +10,8 @@ class Pantry
     @food_counter
   end
 
+  def restock(food, quantity)
+    @food_counter += quantity
+  end
+
 end
