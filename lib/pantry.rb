@@ -21,19 +21,17 @@ class Pantry
   end
 
   def print_shopping_list
-    @shopping_list
-    @shopping_list.map do |element|
-      element[shopping_list]
+    names = @shopping_list.keys
+    values = @shopping_list.values
+    shopping_list_name = " "
+
+    names.each do |name|
+      name
+        values.map do |amount|
+          shopping_list_name += " * #{name}: #{amount}\n"
+        end
     end
-    "* #{@shopping_list[key]}"
-
-  #   def report
-  # string_to_return = "Name : #{@name} \nQualifications :"
-  # @licenses.each do |element|
-  #   string_to_return += "\n- License #{element} "
-  # end
-  #   return string_to_return
-
+    return shopping_list_name
   end
 
 end
