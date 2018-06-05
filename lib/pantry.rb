@@ -17,20 +17,23 @@ class Pantry
   end
 
   def add_to_shopping_list(recipe)
-    # recipe
-    recipe.name
-    # require "pry"; binding.pry
-    array = [{"Cheese"=>20, "Flour"=>20}, {"Cheese" =>5}]
-    array << recipe.ingredients
-    result = array.each_with_object(Hash.new(0)) do |hash, result|
-      hash.each { |key, value| result[key] += value}
-        require "pry"; binding.pry
+    @shopping_list = recipe.ingredients
+  end
+
+  def print_shopping_list
+    @shopping_list
+    @shopping_list.map do |element|
+      element[shopping_list]
     end
+    "* #{@shopping_list[key]}"
 
-    @shopping_list = result
-    # (recipe.ingredients)
+  #   def report
+  # string_to_return = "Name : #{@name} \nQualifications :"
+  # @licenses.each do |element|
+  #   string_to_return += "\n- License #{element} "
+  # end
+  #   return string_to_return
 
-    # require "pry"; binding.pry
   end
 
 end
