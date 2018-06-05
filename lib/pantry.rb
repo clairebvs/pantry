@@ -26,8 +26,7 @@ class Pantry
     shopping_list_name = " "
 
     names.each do |name|
-      name
-        values.map do |amount|
+        values.each do |amount|
           shopping_list_name += " * #{name}: #{amount}\n"
         end
     end
